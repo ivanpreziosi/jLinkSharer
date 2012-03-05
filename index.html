@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>JLink Sharer  plugin</title>
+        <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="jquery.jlinksharer.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function($) {
+                $("#linkSharer").jlinksharer();
+            });
+        </script>
+
+    </head>
+
+    <body>
+        JLinkSharer test page!! <br/><br/>
+        type the link you want to share: <input type="text" id="linkSharer" value="" />
+        <br/><br/><br/>
+
+        <div style="border:2px solid black;padding:5px;width:400px;">
+            <div style="float:left;border:1px solid silver;padding:3px;margin:3px;" id="imageContainer">
+                <img alt="Image grabbed from link" src="" class="JLinkSharer-image" width="100" height="100" />
+                <div style="clear:both;"></div>
+                <a href="javascript://" id="jLinkSharerPrev">prev</a> | <a href="javascript://"  id="jLinkSharerNext">next</a>
+            </div>
+            <div class="JLinkSharer-title-field" style="font-size: 1.1em;font-weight: bold"></div>
+            <div class="JLinkSharer-url-field" style="font-size: 0.9em;"></div>
+            <div class="JLinkSharer-desc-field" style=""></div>
+            <div style="clear:both;"></div>
+        </div>
+         <br/><br/><br/>
+
+         here you have some form fields to be filled.. so you can actually share!
+         <br/><br/>
+         <input type="text" class="JLinkSharer-title-field" /><br/>
+         <input type="text" class="JLinkSharer-url-field" /><br/>
+         <input type="text" class="JLinkSharer-desc-field" /><br/>
+         <input type="text" class="JLinkSharer-image-field" /><br/>
+
+
+    </body>
+</html>
