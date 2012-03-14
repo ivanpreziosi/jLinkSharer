@@ -1,19 +1,29 @@
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//   					JLinkSharer a link sharing plugin             			             //
-//   			Share and show external links in a social way   				  //
-//   			This plugin was made taking inspiration and                                      //
-//   			code bits from the work of Jake Petroules                                          //
-//   as seen on:                                                                                                               //
-//   http://www.jakepetroules.com/2011/07/12/facebook-style-link-sharing-box   //
-//   made in the beginning of 2012 by Ivan Preziosi (ivan.preziosi@gmail.com) 	 //
-//                                                                                                                                      //
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+*   jLinkSharer - a link sharing and web scraping plugin for jQuery         **
+*   Share, scrape and show external links descriptions and thumbnails       **
+*   
+*   made in 2012 by Ivan Preziosi - ivan.preziosi[at]gmail[dot]com          **
+*                                                                           **
+*   This plugin was made taking inspiration and code bits from the work     **
+*   of Jake Petroules. As seen on:                                          **
+*   http://www.jakepetroules.com/2011/07/12/facebook-style-link-sharing-box **
+*                                                                           **
+*   version 0.1 - released under GNU LESSER GENERAL PUBLIC LICENSE v.3      **
+*   http://www.gnu.org/licenses/lgpl-3.0.txt                                **
+*   
+*   This program is free software: you can redistribute it and/or modify    **
+*   it under the terms of the GNU LGPL as published by                      **
+*   the Free Software Foundation, either version 3 of the License, or       **
+*   (at your option) any later version.                                     **
+*   This program is distributed in the hope that it will be useful,         **
+*   but WITHOUT ANY WARRANTY; without even the implied warranty of          **
+*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           **
+*   GNU General Public License for more details.                            **
+*                                                                           **
+*   You should have received a copy of the GNU Lesser General Public License**
+*   along with this program.  If not, see <http://www.gnu.org/licenses/>.   **
+**/
 
-
-
-/* 
- * jLinkSharer by Ivan Preziosi
- */
 jQuery.fn.jlinksharer = function(options) {
 	
     //configurations goes here
@@ -69,11 +79,11 @@ jQuery.fn.jlinksharer = function(options) {
 
 
         /*
-		 * Gets the title of the link by trying the following in order
-		 * until it finds a string or returns an empty string:
-		 * * Contents of the first title tag
-		 * * Contents of the first h1 tag
-		 */
+        * Gets the title of the link by trying the following in order
+        * until it finds a string or returns an empty string:
+        * * Contents of the first title tag
+        * * Contents of the first h1 tag
+        */
         var getLinkTitle = function(){
             var title = '';
 
@@ -98,12 +108,12 @@ jQuery.fn.jlinksharer = function(options) {
 
 
         /*
-		 * Gets a description of the link by trying the following in order
-		 * until it finds a string or returns an empty string:
-		 * * Contents of the first meta tag with the name attribute set to "description"
-		 * * Contents of the first p tag
-		 * * Contents of the first div tag
-		 */
+        * Gets a description of the link by trying the following in order
+        * until it finds a string or returns an empty string:
+        * * Contents of the first meta tag with the name attribute set to "description"
+        * * Contents of the first p tag
+        * * Contents of the first div tag
+        */
         var getLinkDescription = function() {
             var description = '';
 
@@ -152,8 +162,8 @@ jQuery.fn.jlinksharer = function(options) {
 
 
         /*
-		 * Gets an array of all the URLs of the img tags on the page.
-		 */
+        * Gets an array of all the URLs of the img tags on the page.
+        */
         var getImageUrls = function() {
             var urls = new Array();
             $('*', options.raw).each(function() {
@@ -196,7 +206,7 @@ jQuery.fn.jlinksharer = function(options) {
             });
         }
 
-       var showTitle = function() {
+        var showTitle = function() {
             options.titleField.each(function(){
                 $(this).html(options.title); //in case its a div or similar, we fill html
                 $(this).val(options.title); //in case is a form field we fill the value
@@ -296,26 +306,26 @@ jQuery.fn.jlinksharer = function(options) {
  * Docs: http://www.openjs.com/scripts/others/dump_function_php_print_r.php
  */
 function dump(arr,level) {
-	var dumped_text = "";
-	if(!level) level = 0;
+    var dumped_text = "";
+    if(!level) level = 0;
 
-	//The padding given at the beginning of the line.
-	var level_padding = "";
-	for(var j=0;j<level+1;j++) level_padding += "    ";
+    //The padding given at the beginning of the line.
+    var level_padding = "";
+    for(var j=0;j<level+1;j++) level_padding += "    ";
 
-	if(typeof(arr) == 'object') { //Array/Hashes/Objects
-		for(var item in arr) {
-			var value = arr[item];
+    if(typeof(arr) == 'object') { //Array/Hashes/Objects
+        for(var item in arr) {
+            var value = arr[item];
 
-			if(typeof(value) == 'object') { //If it is an array,
-				dumped_text += level_padding + "'" + item + "' ...\n";
-				dumped_text += dump(value,level+1);
-			} else {
-				dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
-			}
-		}
-	} else { //Stings/Chars/Numbers etc.
-		dumped_text = "===>"+arr+"<===("+typeof(arr)+")";
-	}
-	return dumped_text;
+            if(typeof(value) == 'object') { //If it is an array,
+                dumped_text += level_padding + "'" + item + "' ...\n";
+                dumped_text += dump(value,level+1);
+            } else {
+                dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
+            }
+        }
+    } else { //Stings/Chars/Numbers etc.
+        dumped_text = "===>"+arr+"<===("+typeof(arr)+")";
+    }
+    return dumped_text;
 }
