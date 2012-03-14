@@ -1,0 +1,39 @@
+{
+    "name": "jquery.jLinkSharer",
+    "version": "0.1",
+    "title": "jQuery.jLinkSharer() a link sharing and web scraping plugin for jQuery",
+    "author": {
+        "name": "Ivan Preziosi",
+        "url": "https://github.com/ivanpreziosi",
+        "email": "ivan.preziosi@gmail.com"
+    },
+    "licenses": [
+        {
+            "type": "LGPLv3",
+            "url": "http://www.gnu.org/licenses/lgpl-3.0.txt"
+        },
+    ],
+    "dependencies": {
+        "jquery": "1"
+    },
+    "description": "JLinkSharer is a plugin for jquery which helps the creation of link sharing services with web scraping capabilities. It provides a very simple interface to create and style your implementation in minutes.",
+    "keywords": [
+        "link",
+        "sharing",
+        "web scraping",
+        "url"
+    ],
+    "homepage": "https://github.com/ivanpreziosi/jLinkSharer",
+    "maintainers": [
+        {
+            "name": "Ivan Preziosi",
+            "url": "https://github.com/ivanpreziosi"
+        }
+    ],
+    "files": [
+        "jquery.jlinksharer.js",
+        "proxy.php",
+        "README.txt",
+        "index.html",
+    ]
+}
